@@ -1,0 +1,159 @@
+@import '../../styles.scss';
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+nav {
+    background-color: $primary-color;
+    color: white;
+    height: 10vh;
+    width: 100%;
+
+    >div:first-child {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .right-nav {
+            >div:first-child {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 10px;
+                margin-right: 50px;
+
+                >span:first-child {
+                    color: white;
+                }
+
+                >span:not(span:first-child, span:nth-child(2)) {
+                    background-color: white;
+                }
+
+                >span {
+                    width: 30px;
+                    height: 30px;
+                    color: $primary-color;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                }
+
+                button {
+                    border-color: white;
+                }
+            }
+        }
+
+        .left-nav {
+            margin-left: 50px;
+
+            mat-select {
+                background-color: white;
+                padding: 10px;
+                border-radius: 2px;
+                text-align: center;
+                vertical-align: middle;
+
+                mat-option {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    >div:nth-child(2) {
+        color: black;
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item:hover {
+            >span:not(.selected-item) {
+                min-height: 2px;
+                width: 100%;
+                background: linear-gradient(90deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+                animation: nav-item 1s ease-in-out 0s 1 normal forwards;
+            }
+        }
+        .button-icon{
+            display: none;
+        }
+        .mat-menu-item{
+            color: $primary-color;
+        }
+        .selected-item{
+            min-height: 2px;
+            width: 100%;
+            background: linear-gradient(90deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hidden {
+        display: none !important;
+    }
+    .account{
+        display: block !important;
+    }
+}
+
+@media (max-width: 1150px) {
+    .item {
+        display: none !important;
+    }
+    .button-icon{
+        display: block !important;
+    }
+    .button-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    nav>div:nth-child(2) {
+        justify-content: flex-end;
+        margin-right: 10px;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    nav>div:nth-child(2) {
+        justify-content: space-between;
+    }
+}
+
+@keyframes nav-item {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

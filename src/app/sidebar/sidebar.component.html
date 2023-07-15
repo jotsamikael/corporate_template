@@ -1,0 +1,85 @@
+<nav>
+    <div>
+        <div class="left-nav">
+            <mat-form-field>
+                <mat-select disableRipple value="1">
+                    <mat-option value="1">Français <img src="../../assets/flags/france.png" height="12" width="12"
+                            alt="flag"> </mat-option>
+                    <mat-option value="2">Anglais <img src="../../assets/flags/united-kingdom.png" height="12"
+                            width="12" alt="flag"></mat-option>
+                    <mat-option value="3">Allemand <img src="../../assets/flags/germany.png" height="12" width="12"
+                            alt="flag"></mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="right-nav">
+            <div>
+                <span class="hidden">
+                    0$
+                </span>
+                <span class="hidden" matBadge="1" matBadgeSize="small">
+                    <img src="../../assets/icons/shopping-basket.png" height="20" width="20" />
+                </span>
+                <button mat-stroked-button class="account">Compte</button>
+                <span class="hidden">
+                    <img src="../../assets/icons/email.png" height="20" width="20" />
+                </span>
+                <span class="hidden">
+                    <img src="../../assets/icons/facebook.png" height="20" width="20" />
+                </span>
+                <span class="hidden">
+                    <img src="../../assets/icons/youtube.png" height="20" width="20" />
+                </span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button [matMenuTriggerFor]="menu" mat-icon-button class="button-icon" aria-label="Example icon button with a vertical three dot icon">
+            <div class="center-container">
+                <mat-icon>
+                    <img src="../../assets/icons/apps.png" height="20" width="20" />
+                </mat-icon>
+            </div>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Accueil</button>
+            <button mat-menu-item>Hébergement web</button>
+            <button mat-menu-item>WP-Ressources</button>
+            <button mat-menu-item>Réparer le site Web lent</button>
+            <button mat-menu-item>Contactez-Noust</button>
+            <button mat-menu-item>Service personnalisé</button>
+        </mat-menu>
+        <div class="item" (click)="onChangePage(1)">
+            Accueil
+            <span [ngClass]="{'selected-item': selected === 1}"></span>
+        </div>
+        <div class="item" (click)="onChangePage(2)">
+            Hébergement web
+            <span [ngClass]="{'selected-item': selected === 2}"></span>
+        </div>
+        <div class="item" (click)="onChangePage(3)">
+            WP-Ressources
+            <span [ngClass]="{'selected-item': selected === 3}"></span>
+        </div>
+        <div class="item" (click)="onChangePage(4)">
+            Réparer le site Web lent
+            <span [ngClass]="{'selected-item': selected === 4}"></span>
+        </div>
+        <div class="item" (click)="onChangePage(5)">
+            Contactez-Nous
+            <span [ngClass]="{'selected-item': selected === 5}"></span>
+        </div>
+        <div class="item" (click)="onChangePage(6)">
+            Service personnalisé
+            <span [ngClass]="{'selected-item': selected === 6}"></span>
+        </div>
+        <div>
+            <section>
+                <mat-button-toggle-group>
+                    <mat-button-toggle color value="italic">Disposition Divi </mat-button-toggle>
+                    <mat-button-toggle value="underline">Modèle elementor</mat-button-toggle>
+                </mat-button-toggle-group>
+            </section>
+        </div>
+    </div>
+</nav>
