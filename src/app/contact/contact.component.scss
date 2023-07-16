@@ -1,0 +1,117 @@
+@import '../../styles.scss';
+
+.contains {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+    >div:first-child {
+        display: grid;
+        height: 23vh;
+        width: 98vw;
+        margin-top: 2vh;
+        background: linear-gradient(90deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+        border-radius: 5px;
+
+        >p {
+            text-align: center;
+            font-size: 60px;
+            color: white;
+            align-self: center;
+            align-self: center;
+        }
+    }
+
+    >div:nth-child(2) {
+        width: 50vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 10px;
+            column-gap: 10px;
+
+            >mat-form-field:nth-child(3),
+            >mat-form-field:nth-child(4), >button {
+                grid-column: 1 / span 2;
+            }
+
+            >mat-form-field:active,
+            >mat-form-field:focus,
+            textarea:active,
+            mat-select {
+                border-color: $primary-color;
+            }
+            button{
+                color: $primary-color;
+                margin-bottom: 10px;
+                justify-self: center;
+                width: 99%;
+                color: $primary-color;
+            }
+        }
+
+        .form-textarea {
+            mat-label {
+                padding-left: 10px;
+            }
+
+            textarea {
+                border: 0.1px solid;
+                border-color: #dcdde1;
+                border-radius: 5px;
+                padding: 5px 0 5px 10px;
+                height: 100px;
+            }
+        }
+    }
+}
+
+@media (max-width: 100px) {
+    .contains {
+        >div:first-child {
+            width: 95vw;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .contains {
+        >div:first-child {
+            >p {
+                font-size: 30px;
+                width: 92vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .contains {
+        >div:first-child {
+            height: 20vh;
+            width: 95vw;
+        }
+        >div:nth-child(2) {
+            width: 80vw;
+            form{
+                grid-template-columns: 1fr;
+                >mat-form-field {
+                    grid-column: 1;
+                    width: 80vw;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .contains {
+        >div:first-child {
+            width: 90vw;
+        }
+    }
+}

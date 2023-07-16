@@ -5,16 +5,18 @@
 }
 
 nav {
-    background-color: $primary-color;
     color: white;
-    height: 10vh;
     width: 100%;
+    top: 0px;
+    backdrop-filter: blur(10px);
 
     >div:first-child {
-        align-items: center;
+        align-items: baseline;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        height: 10vh;
+        background-color: $primary-color;
 
         .right-nav {
             >div:first-child {
@@ -50,25 +52,11 @@ nav {
 
         .left-nav {
             margin-left: 50px;
-
-            mat-select {
-                background-color: white;
-                padding: 10px;
-                border-radius: 2px;
-                text-align: center;
-                vertical-align: middle;
-
-                mat-option {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    vertical-align: middle;
-                }
-            }
         }
     }
 
     >div:nth-child(2) {
+        position:sticky;
         color: black;
         display: flex;
         justify-content: space-around;
