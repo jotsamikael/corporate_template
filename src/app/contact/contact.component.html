@@ -1,0 +1,38 @@
+<div class="contains">
+    <div>
+        <p>contactez-nous</p>
+    </div>
+    <div>
+        <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+            <mat-form-field appearance="outline">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="name">
+                <mat-icon matSuffix>person_outlined</mat-icon>
+                <mat-error *ngIf="myForm.controls['name'].hasError('required')">Le nom est requis</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+                <mat-icon matSuffix>mail_outlined</mat-icon>
+                <mat-error *ngIf="myForm.controls['email'].hasError('required')">L'email est requis</mat-error>
+                <mat-error *ngIf="myForm.controls['email'].hasError('email')">L'email n'est pas valide</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Raison du contact</mat-label>
+                <mat-select formControlName="reason">
+                    <mat-option value="support">Support technique</mat-option>
+                    <mat-option value="facturation">Facturation</mat-option>
+                    <mat-option value="bug">Bug</mat-option>
+                    <mat-option value="autres">Autres</mat-option>
+                </mat-select>
+                <mat-error *ngIf="myForm.controls['reason'].hasError('required')" align="end">La raison du contact est requise</mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-textarea">
+                <mat-label>Message</mat-label>
+                <textarea matInput formControlName="message"></textarea>
+                <mat-error *ngIf="myForm.controls['message'].hasError('required')">Le message est requis</mat-error>
+            </mat-form-field>
+            <button mat-stroked-button>Envoyer</button>
+        </form>
+    </div>
+</div>
